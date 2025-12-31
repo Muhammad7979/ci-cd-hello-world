@@ -1,0 +1,19 @@
+name: Inline Scripts Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello-inline-bash:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Run inline Bash
+        run: echo "Hello from an inline bash script"
+
+  say-hello-inline-python:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Run inline Python
+        run: |
+          print("Hello from an inline python script")
+        shell: python
