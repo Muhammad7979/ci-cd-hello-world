@@ -10,9 +10,9 @@ on:
       - opened
       - synchronize
       - reopened
-  paths:
-    - '*.txt'
-    - '!*.md'
+    paths:
+      - '*.txt'
+      - '!*.md'
   schedule:
     - cron: '0 0 * * *'
 
