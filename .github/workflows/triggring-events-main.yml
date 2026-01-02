@@ -6,13 +6,13 @@ on:
       - example-branch
 
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-    paths:
-      - '*.txt'
-      - '!*.md'
+      types:
+        - opened
+        - synchronize
+        - reopened
+      paths:
+        - '*.txt'
+        - '!*.md'
   schedule:
     - cron: '0 0 * * *'
 
