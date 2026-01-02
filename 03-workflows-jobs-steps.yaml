@@ -1,0 +1,41 @@
+name: workflows, jobs, and steps
+on:
+  workflow_dispatch:
+
+jobs:
+    job1:
+      runs-on: ubuntu-24.04
+      steps:
+        - run: echo "A job consists of"
+
+        - run: echo "one or more steps"
+
+        - run: echo "which run sequentially"
+
+        - run : echo "with in the same runner environment"
+
+    job2:
+      runs-on: ubuntu-24.04
+      steps:
+        - run: echo "Multiple jobs"
+
+        - run: echo "can run in parallel"
+
+        - run: echo "on different runners"
+
+    job3:
+       runs-on: ubuntu-24.04
+       needs:
+        - job1
+        - job2
+
+       steps:
+          - run: echo "they can also depend on eachother"
+
+    job4:
+      runs-on: ubuntu-24.04
+      needs:
+        - job2
+        - job3
+      steps:
+         - run: echo "and be chained together"

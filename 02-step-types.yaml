@@ -1,4 +1,4 @@
-name: Inline Scripts Demo
+name: Steps types
 
 on:
   workflow_dispatch:
@@ -16,12 +16,12 @@ jobs:
       - name: Run inline Python
         run: |
           print("Hello from an inline python script")
-        shell: python
+        shell: python3
 
   say-hello-action:
     runs-on: ubuntu-24.04
     steps:
-      - name: Run JavaScript action
+      - name: Run hello-world action
         uses: actions/hello-world-javascript-action@v1
         with:
-          who-to-greet: "from an action in the GitHub Actions marketplace"
+          who-to-greet: "World"
