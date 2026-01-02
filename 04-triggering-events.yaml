@@ -13,16 +13,17 @@ on:
     paths:
       - '*.txt'
       - '!*.md'
+
   schedule:
     - cron: '0 0 * * *'
 
   workflow_dispatch:  
 
 jobs:
-  echo-event:  
-       runs-on: ubuntu-24.04
-       steps:
-         - name: Dump full event JSON
-           run: |
-              echo "=== $GITHUB_EVENT_PATH PAYLOAD ==="
-              cat "$GITHUB_EVENT_PATH"
+  echo-event:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Dump full event JSON
+        run: |
+          echo "=== $GITHUB_EVENT_PATH PAYLOAD ==="
+          cat "$GITHUB_EVENT_PATH"
