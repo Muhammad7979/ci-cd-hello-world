@@ -10,7 +10,7 @@ jobs:
 
       - name: Restore cache
         id: demo-cache 
-        uses: action/cache@v4
+        uses: actions/cache@v4
         with:
           path: demo-cache
           key: demo-cache-v1
