@@ -6,7 +6,7 @@ on:
 jobs:
   call-reusable-workflow-path:
     name: Invoke reusable workflow with relative path
-    uses: ./.github/workflows/17-reusable-workflow-main.yaml
+    uses: ./.github/workflows/reuseable-workflow-source-main.yml
     with:
       foo: bar
       environment: staging
@@ -14,7 +14,7 @@ jobs:
 
   call-reusable-workflow-sha:
     name: Invoke reusable workflow with SHA
-    uses: Muhammad7979/ci-cd-hello-world/.github/workflows/17-reusable-workflow-main.yaml@a9bc7aa67d4bec1feb2aa81eace4bb2380195fea
+    uses: Muhammad7979/ci-cd-hello-world/.github/workflows/reuseable-workflow-source-main.yml@a9bc7aa67d4bec1feb2aa81eace4bb2380195fea
     with:
       foo: bar
       environment: production
