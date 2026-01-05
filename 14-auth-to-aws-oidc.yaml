@@ -1,0 +1,15 @@
+name: Auth to aws oidc Permission
+on:
+  workflow_dispatch:
+
+jobs:  
+  auth-to-aws-oidc:
+    runs-on: ubuntu-24.04
+    permissions:
+      id-token:write # Allow OIDC token creation 
+    steps:
+      - name: "Configuration AWS Credentials - Action fr github Actions"
+        uses: aws-actions/configure-aws-credentials@v4.2.1
+        with:
+          aws-region: us-east-2
+          role-to-assume: ${{ arn:aws:iam::624143919895:user/github-action-user }}
