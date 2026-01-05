@@ -1,0 +1,22 @@
+name: Reusable Workflow Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable-workflow-path:
+    name: Invoke reusable workflow with relative path
+    uses: ./.github/workflows/17-reusable-workflow.yaml
+    with:
+      foo: bar
+      environment: staging
+    secrets: inherit
+
+  call-reusable-workflow-sha:
+    name: Invoke reusable workflow with SHA
+    uses: Muhammad7979/ci-cd-hello-world/.github/workflows/17-reusable-workflow.yaml@a9bc7aa67d4bec1feb2aa81eace4bb2380195fea
+    with:
+      foo: bar
+      environment: production
+    secrets:
+      EXAMPLE_REPOSITORY_SECRET: ${{ secrets.EXAMPLE_REPOSITORY_SECRET }}
